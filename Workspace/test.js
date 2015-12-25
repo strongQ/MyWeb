@@ -20,7 +20,7 @@ fs.readFile('sample.txt','utf-8',function(err,data){
 	}
 
 });
-//读取二进制文件
+//异步读取文件
 fs.readFile('one.jpg',function(err,data){
 	if (err){
 		console.log(err);
@@ -28,4 +28,8 @@ fs.readFile('one.jpg',function(err,data){
 		console.log(data);
 		console.log(data.length+'bytes');
 	}
-})
+});
+
+//同步读文件
+var dataSync=fs.readFileSync("sample.txt",'utf-8');
+console.log(dataSync);
